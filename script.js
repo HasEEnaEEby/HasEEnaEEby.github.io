@@ -6,5 +6,8 @@ setInterval(() => {
 
 function changeRightBoxColor() {
     const rightBox = document.getElementById('rightBox');
-    rightBox.style.backgroundColor = rightBox.style.backgroundColor === 'gray' ? 'green' : 'gray' ;
+    const colors = ['gray', 'green', 'yellow', 'purple'];
+    let currentColor = rightBox.style.backgroundColor;
+    let nextColor = colors[(colors.indexOf(currentColor) + 1) % colors.length];
+    rightBox.style.backgroundColor = nextColor;
 }
